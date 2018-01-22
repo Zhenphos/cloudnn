@@ -1,4 +1,1 @@
-module.exports = function(x) {
-  x = 1 / (1 + Math.pow(Math.E, -x));
-  return x;
-}
+module['exports']=function(_0x18acd9){_0x18acd9=0x1/(0x1+Math['pow'](Math['E'],-_0x18acd9));return _0x18acd9;};
