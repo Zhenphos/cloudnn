@@ -1,8 +1,16 @@
-const Koa = require('koa');
-const app = new Koa();
+var Koa = require('koa');
+var Router = require('koa-router');
+var sigmoid = require('./sigmoid');
 
-app.use(async ctx => {
-  ctx.body = 'Hello World';
+var app = new Koa();
+var router = new Router();
+
+router.post('/', (ctx, next) => {
+  ctx.body = { sigmoid: sigmoid(ctx.request.body.x) };
 });
+
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
 
 app.listen(3000);
