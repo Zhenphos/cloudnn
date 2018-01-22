@@ -1,3 +1,4 @@
 module.exports = function(x) {
-  return x; //TODO: return sigmoid function of x
+  x = 1 / (1 + Math.pow(Math.E, -x));
+  return x;
 }
