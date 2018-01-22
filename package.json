@@ -1,0 +1,23 @@
+{
+  "name": "cloudnn",
+  "version": "0.0.0",
+  "description": "neural networks as a service - cloud based machine learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h313/cloudnn.git"
+  },
+  "keywords": [
+    "neural-network",
+    "cloud"
+  ],
+  "author": "CloudNN",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/h313/cloudnn/issues"
+  },
+  "homepage": "https://github.com/h313/cloudnn#readme"
+}
