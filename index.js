@@ -1,1 +1,21 @@
-var _0x1e5f=['koa-router','./sigmoid','post','body','request','use','routes','koa'];(function(_0x40fee1,_0x128450){var _0x3a4ac5=function(_0x2eb59d){while(--_0x2eb59d){_0x40fee1['push'](_0x40fee1['shift']());}};_0x3a4ac5(++_0x128450);}(_0x1e5f,0x1af));var _0xb19d=function(_0x4e6e5a,_0x34fed4){_0x4e6e5a=_0x4e6e5a-0x0;var _0x1bffaf=_0x1e5f[_0x4e6e5a];return _0x1bffaf;};var Koa=require(_0xb19d('0x0'));var Router=require(_0xb19d('0x1'));var sigmoid=require(_0xb19d('0x2'));var app=new Koa();var router=new Router();router[_0xb19d('0x3')]('/',(_0x339640,_0x3ff772)=>{_0x339640[_0xb19d('0x4')]={'sigmoid':sigmoid(_0x339640[_0xb19d('0x5')][_0xb19d('0x4')]['x'])};});app[_0xb19d('0x6')](router[_0xb19d('0x7')]())[_0xb19d('0x6')](router['allowedMethods']());app['listen'](0xbb8);
+var Koa = require('koa');
+var Router = require('koa-router');
+var sigmoid = require('./sigmoid');
+var tanh = require('./tanh');
+
+var app = new Koa();
+var router = new Router();
+
+router.post('/sigmoid', (ctx, next) => {
+  ctx.body = { sigmoid: sigmoid(ctx.request.body.x) };
+});
+
+router.post('/tanh', (ctx, next) => {
+	ctx.body = { sigmoid: tanh(ctx.request.body.x) };
+});
+
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
+
+app.listen(3000);
